@@ -1,13 +1,12 @@
 package com.naviworks.helloworld;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity(name = "student")
 public class Student
 {
-    @Id
+    @Id @Column @GeneratedValue(strategy = GenerationType.AUTO) // GeneratedValue은 오토넘버링 적용할 때
+    private long id;
     @Column
     private String name;
     @Column
