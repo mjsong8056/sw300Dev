@@ -17,10 +17,14 @@ public class StudentService
         this.sr = sr;
     }
 
-    public Student joinStudent(Student student)
+    public void joinStudent(Student student)
     {
+        // 어떤 방법을 썼는지는 모르지만 저장하고 싶다
+        sr.save(student);
+    }
 
-
-        return student;
+    public Student findStudent(String name)
+    {
+        return sr.findById(name).get();
     }
 }
